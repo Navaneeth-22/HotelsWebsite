@@ -182,8 +182,8 @@ export default function HotelsUI() {
   scrollObserver$.subscribe(() => {
     console.log(window.scrollY + "height is" + window.innerHeight);
     const obj = document.getElementById("hotelImage");
-    // eslint-disable-next-line eqeqeq
-    if (obj != undefined) {
+
+    if (obj !== undefined && obj?.clientHeight !== undefined) {
       if (window.scrollY >= obj?.clientHeight - 64) {
         setnavbar("navBar");
       } else {
