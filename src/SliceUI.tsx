@@ -14,7 +14,7 @@ export default function SliceUI() {
     }
     dispatch(started());
     api();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Grid container spacing={2}>
@@ -26,7 +26,7 @@ export default function SliceUI() {
     return (
       <Grid item xs={4} key={user.id}>
         <div>
-          <img src={user.avatar} />
+          <img src={user.avatar} alt="image1" />
           <div>{user.first_name}</div>
         </div>
       </Grid>

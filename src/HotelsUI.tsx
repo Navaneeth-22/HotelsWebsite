@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles } from "@material-ui/styles";
-import firebase from "firebase/app";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -183,6 +182,7 @@ export default function HotelsUI() {
   scrollObserver$.subscribe(() => {
     console.log(window.scrollY + "height is" + window.innerHeight);
     const obj = document.getElementById("hotelImage");
+    // eslint-disable-next-line eqeqeq
     if (obj != undefined) {
       if (window.scrollY >= obj?.clientHeight - 64) {
         setnavbar("navBar");
@@ -202,7 +202,7 @@ export default function HotelsUI() {
     }
     dispatch(started());
     api();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.bodyBackground}>

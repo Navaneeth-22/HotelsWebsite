@@ -78,9 +78,9 @@ export default function Profile() {
 
     if (
       (context && context.uid != null && context?.photoURL != null) ||
-      context?.photoURL != undefined
+      context?.photoURL !== undefined
     ) {
-      await setProfile(context.photoURL);
+      if (context.photoURL != null) await setProfile(context.photoURL);
       console.log("photo was added");
     }
   };
@@ -124,8 +124,13 @@ export default function Profile() {
         });
     }
   };
+
+  //const b = useRef(1);
+
   useEffect(() => {
     listAllimages();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleOnError = () => {
     if (allRandomImages[0] != null) setProfile(allRandomImages[0]);
