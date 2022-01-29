@@ -218,7 +218,7 @@ export default function HotelsUI() {
       />
 
       <div className={isActive2 ? styles.headerText2 : styles.headerText}>
-        Welcome to the HotelBooking website
+        Welcome to my HotelBooking website
       </div>
       <AppBar position="fixed" className={styles[currentNavbar.current]}>
         <Container>
